@@ -26,7 +26,6 @@ int MaxDigit(int num) // num = number
     int secondDigit = num % 10;
     // if (firsDigit > secondDigit) return firsDigit;
     // return 0;
-    int maxDigit = firsDigit >secondDigit ? firsDigit : secondDigit;
-    return maxDigit;
+    int result = firsDigit >secondDigit ? firsDigit : secondDigit;
+    return result;
 }
-
