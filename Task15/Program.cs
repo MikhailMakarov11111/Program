@@ -9,35 +9,35 @@ string num = Console.ReadLine();
 string DayWeek(string numb)
 {
     if (numb == "1")
-    return numb = "Понедельник";
+        return numb = "Понедельник";
     if (numb == "2")
-    return numb = "Вторник";
+        return numb = "Вторник";
     if (numb == "3")
-    return numb = "Среда";
+        return numb = "Среда";
     if (numb == "4")
-    return numb = "Четверг";
+        return numb = "Четверг";
     if (numb == "5")
-    return numb = "Пятница";
+        return numb = "Пятница";
     if (numb == "6")
-    return numb = "Суббота";
+        return numb = "Суббота";
     if (numb == "7")
-    return numb = "Воскресенье";
-    else 
-    return num = "Некорректное значение";
+        return numb = "Воскресенье";
+    else
+        return num = "Некорректное значение";
 };
 
 string Weekend(string number)
 {
     if (number == "6" || number == "7")
-    return number = "выходной";
+        return number = "выходной";
     else
     {
         return number = "не выходной";
     }
 }
-if (num == "1" || num == "2" || num == "3" || num == "4"|| num == "5"|| num == "6"|| num == "7")
+if (num == "1" || num == "2" || num == "3" || num == "4" || num == "5" || num == "6" || num == "7")
 {
-    string dayWeek =DayWeek(num);
+    string dayWeek = DayWeek(num);
     string weekend = Weekend(num);
     Console.WriteLine($"{dayWeek} -> {weekend}");
 }
