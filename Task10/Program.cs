@@ -8,10 +8,10 @@ int num = Convert.ToInt32(Console.ReadLine());
 
 int Result(int numb)
 {
-int firsDigit = numb / 100; 
-int lastDigit = numb % 10;
-int dableDigit = (numb - firsDigit * 100 - lastDigit)/10;
-return dableDigit;
+    int firsDigit = numb / 100;
+    int lastDigit = numb % 10;
+    int dableDigit = (numb - firsDigit * 100 - lastDigit) / 10;
+    return dableDigit;
 }
 
 if (num > 999 || num < 100)
