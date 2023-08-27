@@ -4,10 +4,9 @@
 // 12821 -> да
 // 23432 -> да
 
-void Palindrome(int num)
+bool Palindrome(int num)
 {
-     if (num / 10000 == num % 10 || (num / 1000) % 10 == (num / 100) % 10) Console.WriteLine($"Число {num} является палиндромом");
-     else Console.WriteLine($"Число {num} не является палиндромом");
+    return (num / 10000 == num % 10 && (num / 1000) % 10 == (num / 10) % 10);
 }
 
 Console.WriteLine("Введите пятизначное число");
@@ -16,6 +15,16 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 if (number < 0) number = number * -1;
 if (number < 10000 || number > 99999) Console.WriteLine("Введено некорректно значение");
-else Palindrome(number);
+else
+{
+    bool result = Palindrome(number);
+    Console.WriteLine(result ? $"Число {number} является палиндромом" : $"Число {number} не является палиндромом");
+}
+
+// if ((number / 10000 == number % 10 && (number / 1000) % 10 == (number / 10) % 10))
+// {
+//     Console.WriteLine("Да");
+// }
+// else Console.WriteLine("Нет");
 
 
