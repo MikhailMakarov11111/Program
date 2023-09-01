@@ -43,3 +43,4 @@ ReverseArray(array);
 PrintArray(array);
 
 Array.Reverse(array);
+PrintArray(array);
