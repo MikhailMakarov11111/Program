@@ -42,7 +42,7 @@ int SumElementsMainDiagonal(int[,] matrix)
     return sum;
 }
 
-int[,] array2d = CreateMatrixRndInt(3, 3, 1, 9);
+int[,] array2d = CreateMatrixRndInt(4, 3, 1, 9);
 PrintMatrix(array2d);
 int sumElementsMainDiagonal = SumElementsMainDiagonal(array2d);
 Console.WriteLine($"Сумма элементов по диагонали: {sumElementsMainDiagonal}");
