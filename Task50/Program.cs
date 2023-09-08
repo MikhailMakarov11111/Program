@@ -55,8 +55,14 @@ Console.WriteLine("Введите номер строки");
 Console.Write("Строка №: ");
 int line = Convert.ToInt32(Console.ReadLine());
 
-int[,] array2d = CreateMatrixRndInt(3, 4, 1, 9);
+int colu = 3;
+int line1= 4;
+int[,] array2d = CreateMatrixRndInt(colu, line1, 1, 9);
 PrintMatrix(array2d);
 Console.WriteLine();
 int result = NumberSearchMatrix(array2d, column, line);
+if (column < 0 || line < 0) Console.WriteLine("Введено некорректное значение");
+else
+{
 
+}
