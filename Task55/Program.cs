@@ -31,6 +31,19 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
+// void ReplaceRowsToColumns(int[,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0)-1; i++)
+//     {
+//         for (int j = i + 1; j < matrix.GetLength(1); j++) //по верхнему треугольнику
+//             {
+//                 int temp = matrix[i, j];
+//                 matrix[i, j] = matrix[j, i];
+//                 matrix[j, i] = temp;
+//             }
+//     }
+// }
+
 void ReplaceRowsToColums(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
@@ -47,5 +60,10 @@ void ReplaceRowsToColums(int[,] matrix)
 int[,] array2d = CreateMatrixRndInt(4, 4, 1, 9);
 PrintMatrix(array2d);
 Console.WriteLine();
+if (array2d.GetLength(0) != array2d.GetLength(1)) 
+{
+    Console.WriteLine("Невозможно заменить строки на столбцы");
+    return;
+}
 ReplaceRowsToColums(array2d);
 PrintMatrix(array2d);
