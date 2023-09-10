@@ -35,17 +35,17 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int NumberSearchMatrix(int[,] matrix, int col, int lin)
+bool NumberSearchMatrix(int[,] matrix, int col, int lin)
 {
-    int number = 0;
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if (i == lin && j == col) number = matrix[i, j];
+            if (i == col-1 && j == lin-1) return true;
+
         }
     }
-    return number;
+    return false;
 }
 
 Console.WriteLine("Введите номер столбца");
@@ -55,14 +55,12 @@ Console.WriteLine("Введите номер строки");
 Console.Write("Строка №: ");
 int line = Convert.ToInt32(Console.ReadLine());
 
-int colu = 3;
-int line1= 4;
-int[,] array2d = CreateMatrixRndInt(colu, line1, 1, 9);
+int[,] array2d = CreateMatrixRndInt(3, 4, 1, 9);
 PrintMatrix(array2d);
 Console.WriteLine();
-int result = NumberSearchMatrix(array2d, column, line);
+bool result = NumberSearchMatrix(array2d, column, line);
 if (column < 0 || line < 0) Console.WriteLine("Введено некорректное значение");
 else
 {
-
+    Console.WriteLine(result ? $"Число с координатами {column}, {line} -> {array2d[column-1,line-1]}" : "Такого эллемента в массиве нет");
 }
