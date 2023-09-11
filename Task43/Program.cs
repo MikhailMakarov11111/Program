@@ -27,8 +27,8 @@ else
     if (numberB1 == numberB2) Console.WriteLine("Прямые с введнными значениями совпадают");
     else
     {
-        countX = (numberB2 - numberB1) / (numberK1 - numberK2);
-        countY = numberK1 * countX + numberB1;
+        countX = (double)(numberB2 - numberB1) / (numberK1 - numberK2);
+        countY = (double)numberK1 * countX + numberB1;
     }
     Console.WriteLine($"Точка пересечения двух прямых имеет координаты ({countX:F1}; {countY:F1})");
 }

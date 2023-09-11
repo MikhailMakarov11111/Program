@@ -67,11 +67,10 @@ int[,] NewMatrixDeleteMinElemIndexes(int[,] matrix, int delRow, int delCol)
     return newMatrix;
 }
 
-
 int[,] array2d = CreateMatrixRndInt(4, 4, 1, 20);
 PrintMatrix(array2d);
 Console.WriteLine();
-int[] minElementIndexes = MinElementIndexes (array2d);
+int[] minElementIndexes = MinElementIndexes(array2d);
 int[,] newMatrixDeleteMinElemIndexes = NewMatrixDeleteMinElemIndexes(array2d, minElementIndexes[0], minElementIndexes[1]);
 Console.WriteLine();
 PrintMatrix(newMatrixDeleteMinElemIndexes);
