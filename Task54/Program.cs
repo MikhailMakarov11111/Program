@@ -40,19 +40,24 @@ int[,] DescendingNumberRowsMatrix(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        int max = matrix[i, 0];
-        for (int j = 0; j < matrix.GetLength(1) - 1; j++)
+        int temp = matrix[i, 0];
+        for (int count = 0; count < matrix.GetLength(1) - 1; count++)
         {
-            if (max < matrix[i, j]) max = matrix[i, j];
-
-
+            for (int j = 0; j < matrix.GetLength(1) - 1; j++)
+            {
+                if (matrix[i, j] < matrix[i, j + 1])
+                {
+                    temp = matrix[i, j];
+                    matrix[i, j] = matrix[i, j + 1];
+                    matrix[i, j + 1] = temp;
+                }
+            }
         }
-
     }
-return matrix;
+    return matrix;
 }
 
-int[,] array2d = CreateMatrixRndInt(3, 4, 1, 9);
+int[,] array2d = CreateMatrixRndInt(3, 4, -9, 9);
 PrintMatrix(array2d);
 Console.WriteLine();
 int[,] descendingNumberRowsMatrix = DescendingNumberRowsMatrix(array2d);
