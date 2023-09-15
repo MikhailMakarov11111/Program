@@ -16,16 +16,16 @@ if (number1 < 1 || number2 < 1)
 
 int SumNaturalNumbers(int num1, int num2)
 {
-    if (num1 < num2)
+    if (num1 <= num2)
     {
-       return num1 + SumNaturalNumbers(num1 + 1, num2);
+        return num1 + SumNaturalNumbers(num1 + 1, num2);
     }
     else if (num1 > num2)
     {
-       return num1 + SumNaturalNumbers(num1 - 1, num2);
+        return num1 + SumNaturalNumbers(num1 - 1, num2);
     }
     else return 0;
 }
 
-int sumNaturalNumbers = SumNaturalNumbers(number1, number2) + number2;
+int sumNaturalNumbers = SumNaturalNumbers(number1, number2);
 Console.WriteLine(sumNaturalNumbers);
