@@ -55,7 +55,7 @@ int[,] MultiplicationMatrix(int[,] matrix1, int[,] matrix2)
 int[,] array2dOne = CreateMatrixRndInt(3, 3, 1, 9);
 PrintMatrix(array2dOne);
 Console.WriteLine();
-int[,] array2dTwo = CreateMatrixRndInt(3, 1, 1, 9);
+int[,] array2dTwo = CreateMatrixRndInt(3, 3, 1, 9);
 PrintMatrix(array2dTwo);
 Console.WriteLine();
 if (array2dOne.GetLength(1) == array2dTwo.GetLength(0))
