@@ -7,7 +7,7 @@ int number1 = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите второе натуральное число: ");
 int number2 = Convert.ToInt32(Console.ReadLine());
 
-if (number1 < 1 || number2 < 1)
+if (number1 < 0 || number2 < 0)
 {
     Console.WriteLine("Ошибка ввода!");
     return;
