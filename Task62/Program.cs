@@ -8,13 +8,11 @@
 int[,] CreateMatrixInt(int rows, int columns)
 {
     int[,] matrix = new int[rows, columns];
-    int count = 1;
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i, j] = count;
-            count++;
+            matrix[i, j] = 0;
         }
     }
     return matrix;
@@ -23,44 +21,51 @@ int[,] CreateMatrixInt(int rows, int columns)
 void PrintMatrix(int[,] matrix, int rows, int columns)
 {
     int max = rows * columns;
-    int count = 0;
     int count1 = 1;
     int count2 = 0;
-    Console.Write($"{matrix[0, 0],5}");
+    int number = 0;
     int i = 0;
     int j = 0;
-    while (count != max)
+    while (number != max)
     {
-        while (i != count1)
+        //2    (2)    4                   2
+        while (j != matrix.GetLength(1) - count1)
         {
-            while (j != matrix.GetLength(1) - count1)
-            {
-                ++j;
-                Console.Write($"{matrix[i, j],5}");
-                count++;
-            }
-            i++;
+            number++; // 13
+            if (number > max) return;
+            matrix[i, j] = number; // 1;1= 13
+            Console.Write($"{matrix[i, j], 5}");
+            j++; // 2
         }
+        //2    (2)   4                   2
         while (i != matrix.GetLength(0) - count1)
         {
-            ++i;
-            Console.Write($"{matrix[i, j],5}");
-            count++;
+            number++; // 14
+            if (number > max) return;
+            matrix[i, j] = number; //1;2 = 14
+            Console.WriteLine($"{matrix[i, j], 5}");
+            i++; // 2
         }
+        //0       0
         while (j != count2)
         {
-            --j;
-            Console.Write($"{matrix[i, j],5}");
-            count++;
+            number++; // 16
+            if (number > max) return;
+            matrix[i, j] = number; // 2;1 = 16
+            Console.Write($"{matrix[i, j], 5}");
+            j--; // 0
         }
+        //     2       2
         while (i != count1)
         {
-            --i;
-            Console.Write($"{matrix[i, j],5}");
-            count++;
+            number++; // 11
+            if (number > max) return;
+            matrix[i, j] = number; // 2;0 = 11
+            Console.WriteLine($"{matrix[i, j],5}");
+            i--; // 1
         }
-        count1++;
-        count2++;
+        count1++; // 2
+        count2++; // 1
     }
 }
 
