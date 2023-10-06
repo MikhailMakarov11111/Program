@@ -18,7 +18,7 @@ int[,] CreateMatrixInt(int rows, int columns)
     return matrix;
 }
 
-void PrintMatrix(int[,] matrix, int rows, int columns)
+int[,] SpiralMatrix(int[,] matrix, int rows, int columns)
 {
     int max = rows * columns;
     int count1 = 1;
@@ -32,42 +32,52 @@ void PrintMatrix(int[,] matrix, int rows, int columns)
         while (j != matrix.GetLength(1) - count1)
         {
             number++; // 13
-            if (number > max) return;
+            if (number > max) return matrix;
             matrix[i, j] = number; // 1;1= 13
-            Console.Write($"{matrix[i, j], 5}");
             j++; // 2
         }
         //2    (2)   4                   2
         while (i != matrix.GetLength(0) - count1)
         {
             number++; // 14
-            if (number > max) return;
+            if (number > max) return matrix;
             matrix[i, j] = number; //1;2 = 14
-            Console.WriteLine($"{matrix[i, j], 5}");
             i++; // 2
         }
         //0       0
         while (j != count2)
         {
             number++; // 16
-            if (number > max) return;
+            if (number > max) return matrix;
             matrix[i, j] = number; // 2;1 = 16
-            Console.Write($"{matrix[i, j], 5}");
             j--; // 0
         }
         //     2       2
         while (i != count1)
         {
             number++; // 11
-            if (number > max) return;
+            if (number > max) return matrix;
             matrix[i, j] = number; // 2;0 = 11
-            Console.WriteLine($"{matrix[i, j],5}");
             i--; // 1
         }
         count1++; // 2
         count2++; // 1
     }
+    return matrix;
 }
 
-int[,] array2d = CreateMatrixInt(4, 4);
-PrintMatrix(array2d, 4, 4);
+void PrintMatrix(int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            Console.Write($"{matrix[i, j],5}");
+        }
+        Console.WriteLine();
+    }
+}
+
+int[,] array2d = CreateMatrixInt(5, 5);
+int[,] spiralMatrix = SpiralMatrix(array2d, 5, 5);
+PrintMatrix(spiralMatrix);
