@@ -28,40 +28,36 @@ int[,] SpiralMatrix(int[,] matrix, int rows, int columns)
     int j = 0;
     while (number != max)
     {
-        //2    (2)    4                   2
         while (j != matrix.GetLength(1) - count1)
         {
-            number++; // 13
+            number++;
             if (number > max) return matrix;
-            matrix[i, j] = number; // 1;1= 13
-            j++; // 2
+            matrix[i, j] = number;
+            j++; 
         }
-        //2    (2)   4                   2
         while (i != matrix.GetLength(0) - count1)
         {
-            number++; // 14
+            number++;
             if (number > max) return matrix;
-            matrix[i, j] = number; //1;2 = 14
-            i++; // 2
+            matrix[i, j] = number;
+            i++;
         }
-        //0       0
         while (j != count2)
         {
-            number++; // 16
+            number++;
             if (number > max) return matrix;
-            matrix[i, j] = number; // 2;1 = 16
-            j--; // 0
+            matrix[i, j] = number;
+            j--;
         }
-        //     2       2
         while (i != count1)
         {
-            number++; // 11
+            number++;
             if (number > max) return matrix;
-            matrix[i, j] = number; // 2;0 = 11
-            i--; // 1
+            matrix[i, j] = number;
+            i--;
         }
-        count1++; // 2
-        count2++; // 1
+        count1++;
+        count2++;
     }
     return matrix;
 }
